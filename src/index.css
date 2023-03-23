@@ -3,7 +3,7 @@
 @tailwind utilities;
 @layer components {
   .btn {
-    @apply px-3 py-1 bg-color2 rounded-md hover:bg-color1 hover:text-color3 text-color1 duration-500 dark:text-colorD3 dark:bg-colorD2 dark:hover:bg-colorD4;
+    @apply px-3 py-1 bg-color2 rounded-md hover:bg-color1 hover:text-color3 text-color1 duration-500;
   }
   .menu-container {
     @apply flex lg:static lg:translate-x-0 lg:bg-color5 fixed duration-500 bg-color6 top-0 right-0 w-full h-full justify-end z-10 lg:dark:bg-colorD1;

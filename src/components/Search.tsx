@@ -4,9 +4,9 @@ class Search extends React.Component {
   render() {
     return (
       <div className="">
-        <form>
-          <input type="search" />
-          <button>Search</button>
+        <form className="flex justify-center gap-4">
+          <input className="border rounded py-2 px-4" type="search" />
+          <button className="btn">Search</button>
         </form>
       </div>
     );
