@@ -3,9 +3,7 @@ import Search from "components/Search";
 
 class Main extends React.Component {
   render() {
-    return (
-      <Search />
-    );
+    return <Search />;
   }
 }
 

@@ -4,7 +4,7 @@ import NavItem from "./NavItem";
 class Navigation extends React.Component {
   public render() {
     return (
-      <nav >
+      <nav>
         <ul className="flex md:gap-7 gap-1">
           <NavItem title="Main page" to="/" />
           <NavItem title="Аbout" to="/about" />

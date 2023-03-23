@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { INavItemProps } from "types/types";
 
 class NavItem extends React.Component<INavItemProps> {

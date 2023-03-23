@@ -1,10 +1,10 @@
-import React from 'react';
-import Header from 'components/Header';
-import Footer from 'components/Footer';
-import Main from 'pages/Main';
-import About from 'pages/About';
-import NotFoundPage from 'pages/NotFoundPage';
-import { Routes, Route, Link } from 'react-router-dom';
+import React from "react";
+import Header from "components/Header";
+import Footer from "components/Footer";
+import Main from "pages/Main";
+import About from "pages/About";
+import NotFoundPage from "pages/NotFoundPage";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
