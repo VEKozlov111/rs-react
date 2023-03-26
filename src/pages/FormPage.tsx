@@ -1,11 +1,11 @@
 import React from "react";
-
+import Form from "components/Form";
 
 class FormPage extends React.Component {
   render() {
     return (
-      <div>
-
+      <div className="flex justify-center">
+        <Form />
       </div>
     );
   }
