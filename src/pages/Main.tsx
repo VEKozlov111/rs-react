@@ -1,6 +1,6 @@
 import React from "react";
 import Search from "components/Search";
-import data from "../assets/data.json"
+import data from "../assets/data.json";
 import Card from "components/Card";
 
 class Main extends React.Component {
