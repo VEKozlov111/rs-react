@@ -16,9 +16,13 @@ class Card extends React.Component<ICardProps> {
         <img src={this.props.card.thumbnail} className="rounded" alt="" />
         <ul>
           <li className="text-color1">- Title: {this.props.card.title}</li>
-          <li className="text-color1">- Description: {this.props.card.description}</li>
+          <li className="text-color1">
+            - Description: {this.props.card.description}
+          </li>
           <li className="text-color1">- Brand: {this.props.card.brand}</li>
-          <li className="text-color1">- Category: {this.props.card.category}</li>
+          <li className="text-color1">
+            - Category: {this.props.card.category}
+          </li>
         </ul>
       </div>
     );
