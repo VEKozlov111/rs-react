@@ -1,5 +1,4 @@
-import React, { useMemo, useState } from "react";
-import data from "../assets/data.json";
+import React from "react";
 
 interface ISearchProps {
   searchQuerry: string,

@@ -14,13 +14,20 @@ function Main() {
       <Search searchQuerry={searchQuerry}
         setSearchQuerry={setSearchQuerry}
       />
-      <div className="flex gap-4 pt-2 flex-wrap">
-        {search.map((card) => (
-          <Card card={card} key={card.id} />
-        ))}
-      </div>
+      {
+        search.length
+          ?
+          <div className="flex  gap-4 pt-2 flex-wrap">
+            {search.map((card) => (
+              <Card card={card} key={card.id} />
+            ))}
+          </div>
+          :
+          <h2 className="text-color1 text-2xl text-center mt-9">
+            Sorry but we didn't find anything!
+          </h2>
+      }
     </div>
   );
 }
 export default Main;
-
