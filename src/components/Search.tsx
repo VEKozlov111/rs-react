@@ -1,16 +1,24 @@
 import React from "react";
 
-class Search extends React.Component {
-  render() {
-    return (
-      <div className="">
-        <form className="flex justify-center gap-4">
-          <input className="border rounded py-2 px-4" type="search" />
-          <button className="btn">Search</button>
-        </form>
-      </div>
-    );
-  }
+interface ISearchProps {
+  searchQuerry: string;
+  setSearchQuerry: React.Dispatch<React.SetStateAction<string>>;
+}
+
+function Search({ searchQuerry, setSearchQuerry }: ISearchProps) {
+  return (
+    <div className="">
+      <form className="flex justify-center gap-4">
+        <input
+          className="border rounded py-2 px-4"
+          type="search"
+          value={searchQuerry}
+          onChange={(e) => setSearchQuerry(e.target.value)}
+          placeholder="Search"
+        />
+      </form>
+    </div>
+  );
 }
 
 export default Search;
