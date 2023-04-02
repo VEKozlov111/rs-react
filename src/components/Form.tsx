@@ -1,22 +1,26 @@
 import React from "react";
-import { SubmitHandler, useForm } from 'react-hook-form';
+import { SubmitHandler, useForm } from "react-hook-form";
 import { Inputs } from "types/types";
 import { IFormProps } from "types/types";
 import { IUser } from "types/types";
 
-
 function Form({ users, addUser }: IFormProps) {
-  const { register, formState: { errors, }, handleSubmit, reset, } = useForm<Inputs>();
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+    reset,
+  } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     const user: IUser = {
       id: users.length ? users.length : 0,
       name: data.name,
-      date: data.date.split('-').length === 3 ? data.date.split('-') : [],
+      date: data.date.split("-").length === 3 ? data.date.split("-") : [],
       country: data.country,
       gender: data.gender,
       file: data.file[0]
         ? URL.createObjectURL(data.file[0])
-        : 'https://cdn-icons-png.flaticon.com/512/1077/1077114.png',
+        : "https://cdn-icons-png.flaticon.com/512/3177/3177440.png",
       agree: !!data.agree,
     };
     alert("Форма отправлена");
@@ -37,7 +41,7 @@ function Form({ users, addUser }: IFormProps) {
         <input
           className="border rounded px-1 text-color1"
           type="text"
-          {...register('name', {
+          {...register("name", {
             required: true,
             pattern: /([A-ZА-Я]{1}[a-zа-я]+)( [A-ZА-Я]{1}[a-zа-я]+)+/,
           })}
@@ -55,7 +59,7 @@ function Form({ users, addUser }: IFormProps) {
           type="date"
           min="01-01-1900"
           pattern="\d{2}-\d{2}-\d{4}"
-          {...register('date')}
+          {...register("date")}
         />
       </div>
       <div>
@@ -63,7 +67,7 @@ function Form({ users, addUser }: IFormProps) {
         <select
           className="text-color1 border rounded"
           defaultValue="Belarus"
-          {...register('country')}
+          {...register("country")}
         >
           <option value="Belarus">Belarus</option>
           <option value="Russia">Russia</option>
@@ -80,7 +84,7 @@ function Form({ users, addUser }: IFormProps) {
             type="radio"
             value="Male"
             id="Male"
-            {...register('gender', { required: true })}
+            {...register("gender", { required: true })}
           />
         </label>
         <label className="text-color1">
@@ -90,18 +94,16 @@ function Form({ users, addUser }: IFormProps) {
             type="radio"
             value="Female"
             id="Female"
-            {...register('gender', { required: true })}
+            {...register("gender", { required: true })}
           />
         </label>
         {errors?.gender && (
-          <p className="text-sm text-red-600">
-            Please make a choise!
-          </p>
+          <p className="text-sm text-red-600">Please make a choise!</p>
         )}
       </div>
       <div>
         <h2 className="text-color1 text-lg">Profile picture</h2>
-        <input type="file" accept="image/*" {...register('file')} />
+        <input type="file" accept="image/*" {...register("file")} />
       </div>
       <div>
         <div className="flex">
@@ -113,13 +115,11 @@ function Form({ users, addUser }: IFormProps) {
             type="checkbox"
             value="true"
             id="agree"
-            {...register('agree', { required: true })}
+            {...register("agree", { required: true })}
           />
         </div>
         {errors?.agree && (
-          <p className="text-sm text-red-600">
-            Confirm your consent!
-          </p>
+          <p className="text-sm text-red-600">Confirm your consent!</p>
         )}
       </div>
       <button type="submit" className="btn">
@@ -127,7 +127,6 @@ function Form({ users, addUser }: IFormProps) {
       </button>
     </form>
   );
-};
-
+}
 
 export default Form;

@@ -1,7 +1,6 @@
 import React from "react";
 
 function About() {
-
   return (
     <div className="flex flex-col gap-4 items-center">
       <h1 className="text-color1 text-2xl">About this App</h1>
@@ -14,4 +13,3 @@ function About() {
   );
 }
 export default About;
-

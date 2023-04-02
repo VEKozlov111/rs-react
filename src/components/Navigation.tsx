@@ -1,9 +1,7 @@
 import React from "react";
 import NavItem from "./NavItem";
 
-
 function Navigation() {
-
   return (
     <nav>
       <ul className="flex md:gap-7 gap-1">

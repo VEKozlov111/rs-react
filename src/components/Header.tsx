@@ -2,7 +2,6 @@ import React from "react";
 import Navigation from "./Navigation";
 
 function Header() {
-
   return (
     <header className="flex py-4 bg-color5 md:px-9 px-2 justify-between">
       <h1>
