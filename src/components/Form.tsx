@@ -1,27 +1,26 @@
 import React from "react";
 import { SubmitHandler, useForm } from 'react-hook-form';
+import { Inputs } from "types/types";
 import { IFormProps } from "types/types";
+import { IUser } from "types/types";
 
-type Inputs = {
-  name: string;
-  date: string;
-  country: CountryEnum;
-  gender: 'male' | 'female';
-  file: Blob[];
-  agree: string;
-};
 
-enum CountryEnum {
-  Belarus = 'Belarus',
-  Russia = 'Russia',
-  Poland = 'Poland',
-  Kazakhstan = 'Kazakhstan',
-};
-
-function Form() {
+function Form({ users, addUser }: IFormProps) {
   const { register, formState: { errors, }, handleSubmit, reset, } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = (data) => {
+    const user: IUser = {
+      id: users.length ? users.length : 0,
+      name: data.name,
+      date: data.date.split('-').length === 3 ? data.date.split('-') : [],
+      country: data.country,
+      gender: data.gender,
+      file: data.file[0]
+        ? URL.createObjectURL(data.file[0])
+        : 'https://cdn-icons-png.flaticon.com/512/1077/1077114.png',
+      agree: !!data.agree,
+    };
     alert("Форма отправлена");
+    addUser([...users, user]);
     reset();
   };
 

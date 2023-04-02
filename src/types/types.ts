@@ -20,7 +20,34 @@ export type IErrorsUpdate = {
   genderError: string;
 };
 
+export interface Inputs {
+  name: string;
+  date: string;
+  country: CountryEnum;
+  gender: 'male' | 'female';
+  file: Blob[];
+  agree: string;
+};
+
+enum CountryEnum {
+  Belarus = 'Belarus',
+  Russia = 'Russia',
+  Poland = 'Poland',
+  Kazakhstan = 'Kazakhstan',
+};
+
+export interface IUser {
+  id: number;
+  name: string;
+  date: string[];
+  country: string;
+  gender: 'male' | 'female';
+  file: string;
+  agree: boolean;
+}
+
+
 export interface IFormProps {
-  updateErrors: (e: IErrorsUpdate) => void;
-  prevState: IFormsState;
+  addUser: (e: IUser[]) => void;
+  users: IUser[];
 }
