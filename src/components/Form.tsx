@@ -80,9 +80,7 @@ function Form({ users, addUser }: IFormProps) {
           <option value="Kazakhstan">Kazakhstan</option>
         </select>
         {errors?.country && (
-          <p className="text-sm text-red-600">
-            Please choose your country!
-          </p>
+          <p className="text-sm text-red-600">Please choose your country!</p>
         )}
       </div>
       <div>
@@ -113,7 +111,11 @@ function Form({ users, addUser }: IFormProps) {
       </div>
       <div>
         <h2 className="text-color1 text-lg">Profile picture</h2>
-        <input type="file" accept="image/*" {...register("file", { required: true })} />
+        <input
+          type="file"
+          accept="image/*"
+          {...register("file", { required: true })}
+        />
         {errors?.file && (
           <p className="text-sm text-red-600">
             Please choose your profile picture!
