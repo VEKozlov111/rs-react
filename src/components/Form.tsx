@@ -59,21 +59,29 @@ function Form({ users, addUser }: IFormProps) {
           type="date"
           min="01-01-1900"
           pattern="\d{2}-\d{2}-\d{4}"
-          {...register("date")}
+          {...register("date", { required: true })}
         />
+        {errors?.date && (
+          <p className="text-sm text-red-600">
+            Please enter your date of birth!
+          </p>
+        )}
       </div>
       <div>
         <h2 className="text-color1 text-lg">Choose your country</h2>
         <select
           className="text-color1 border rounded"
           defaultValue="Belarus"
-          {...register("country")}
+          {...register("country", { required: true })}
         >
           <option value="Belarus">Belarus</option>
           <option value="Russia">Russia</option>
           <option value="Poland">Poland</option>
           <option value="Kazakhstan">Kazakhstan</option>
         </select>
+        {errors?.country && (
+          <p className="text-sm text-red-600">Please choose your country!</p>
+        )}
       </div>
       <div>
         <h2 className="text-color1 text-lg">Your gender</h2>
@@ -103,7 +111,16 @@ function Form({ users, addUser }: IFormProps) {
       </div>
       <div>
         <h2 className="text-color1 text-lg">Profile picture</h2>
-        <input type="file" accept="image/*" {...register("file")} />
+        <input
+          type="file"
+          accept="image/*"
+          {...register("file", { required: true })}
+        />
+        {errors?.file && (
+          <p className="text-sm text-red-600">
+            Please choose your profile picture!
+          </p>
+        )}
       </div>
       <div>
         <div className="flex">
