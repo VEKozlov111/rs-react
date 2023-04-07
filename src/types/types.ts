@@ -9,6 +9,9 @@ export interface ICard {
   brand: string;
   category: string;
   thumbnail: string;
+  price: number;
+  rating: number;
+  stock: number;
 }
 export interface IFormsState {
   nameError: string;

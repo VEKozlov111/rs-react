@@ -11,6 +11,7 @@ module.exports = {
         color4: "#FCE181",
         color5: "#EDEAE5",
         color6: "#00000050",
+        bgModal: "rgba(20, 19, 19, 0.8);",
       },
     },
   },
