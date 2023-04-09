@@ -1,14 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 
 interface ISearchProps {
-  searchQuerry: string;
-  setSearchQuerry: React.Dispatch<React.SetStateAction<string>>;
+  setQuerry: (e: string) => void;
 }
 
-function Search({ searchQuerry, setSearchQuerry }: ISearchProps) {
+function Search({ setQuerry }: ISearchProps) {
+  const [searchQuerry, setSearchQuerry] = useState("");
+
+  function handleSubmit(e: { preventDefault: () => void }) {
+    e.preventDefault();
+    setQuerry(searchQuerry);
+  }
+
   return (
     <div className="">
-      <form className="flex justify-center gap-4">
+      <form className="flex justify-center gap-4" onSubmit={handleSubmit}>
         <input
           className="border rounded py-2 px-4"
           type="search"

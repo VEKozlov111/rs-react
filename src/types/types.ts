@@ -4,11 +4,20 @@ export interface INavItemProps {
 }
 export interface ICard {
   id: number;
-  title: string;
-  description: string;
-  brand: string;
-  category: string;
-  thumbnail: string;
+  name: string;
+  status: string;
+  species: string;
+  type: string;
+  gender: string;
+  origin: {
+    name: string;
+    url: string;
+  };
+  location: {
+    name: string;
+    url: string;
+  };
+  image: string;
 }
 export interface IFormsState {
   nameError: string;
@@ -49,4 +58,12 @@ export interface IUser {
 export interface IFormProps {
   addUser: (e: IUser[]) => void;
   users: IUser[];
+}
+export interface IPageCard {
+  info: {
+    count: number;
+    pages: number;
+    next: string | null;
+  };
+  results: ICard[];
 }
