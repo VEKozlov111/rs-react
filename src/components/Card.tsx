@@ -10,17 +10,14 @@ interface ICardProps {
 function Card({ card, getId, setModal }: ICardProps) {
   return (
     <div
-      className="max-w-xs border rounded border-color1 p-4  cursor-pointer hover:bg-color5 duration-500"
+      className="flex gap-4 flex-col max-w-xs border rounded border-color1 p-4  cursor-pointer hover:bg-color5 duration-500"
       onClick={() => {
-        getId(card.id - 1);
+        getId(card.id);
         setModal(true);
       }}
     >
-      <img src={card.thumbnail} className="rounded" alt="" />
-      <ul>
-        <li className="text-color1">- Title: {card.title}</li>
-        <li className="text-color1">- Brand: {card.brand}</li>
-      </ul>
+      <h2 className="text-color1 text-center">{card.name}</h2>
+      <img src={card.image} className="rounded" alt="" />
     </div>
   );
 }
