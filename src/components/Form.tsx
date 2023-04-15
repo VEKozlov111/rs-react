@@ -1,16 +1,20 @@
 import React from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Inputs } from "types/types";
-import { IFormProps } from "types/types";
 import { IUser } from "types/types";
+import { useAppDispatch, useAppSelector } from "hooks/redux";
+import { userSlice } from "store/reducers/userSlice";
 
-function Form({ users, addUser }: IFormProps) {
+function Form() {
   const {
     register,
     formState: { errors },
     handleSubmit,
     reset,
   } = useForm<Inputs>();
+  const { users } = useAppSelector((state) => state.userReduser);
+  const { addUser } = userSlice.actions;
+  const dispatch = useAppDispatch();
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     const user: IUser = {
       id: users.length ? users.length : 0,
@@ -24,7 +28,7 @@ function Form({ users, addUser }: IFormProps) {
       agree: !!data.agree,
     };
     alert("Форма отправлена");
-    addUser([...users, user]);
+    dispatch(addUser(user));
     reset();
   };
 
