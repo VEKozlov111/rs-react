@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+  .btn {
+    @apply px-3 py-1 bg-color2 rounded-md hover:bg-color1 hover:text-color3 text-color1 duration-500;
+  }
+  .modal {
+    @apply fixed top-0 left-0 flex bg-bgModal w-full h-full flex justify-center items-center duration-500 hidden;
+  }
+  .modal-active {
+    @apply flex;
+  }
+}
+.close {
+  width: 20px;
+  height: 20px;
+}
