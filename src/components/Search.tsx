@@ -1,15 +1,15 @@
 import React, { useState } from "react";
+import { useAppDispatch } from "hooks/redux";
+import { searchSlice } from "store/reducers/searchSlice";
 
-interface ISearchProps {
-  setQuerry: (e: string) => void;
-}
-
-function Search({ setQuerry }: ISearchProps) {
-  const [searchQuerry, setSearchQuerry] = useState("");
+function Search() {
+  const [searchQuerry, setSearchQuerrys] = useState("");
+  const { setSearchQuery } = searchSlice.actions;
+  const dispatch = useAppDispatch();
 
   function handleSubmit(e: { preventDefault: () => void }) {
     e.preventDefault();
-    setQuerry(searchQuerry);
+    dispatch(setSearchQuery(searchQuerry));
   }
 
   return (
@@ -19,7 +19,7 @@ function Search({ setQuerry }: ISearchProps) {
           className="border rounded py-2 px-4"
           type="search"
           value={searchQuerry}
-          onChange={(e) => setSearchQuerry(e.target.value)}
+          onChange={(e) => setSearchQuerrys(e.target.value)}
           placeholder="Search"
         />
       </form>

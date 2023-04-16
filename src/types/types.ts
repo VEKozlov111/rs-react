@@ -19,15 +19,6 @@ export interface ICard {
   };
   image: string;
 }
-export interface IFormsState {
-  nameError: string;
-  genderError: string;
-}
-
-export type IErrorsUpdate = {
-  nameError: string;
-  genderError: string;
-};
 
 export interface Inputs {
   name: string;
@@ -60,5 +51,5 @@ export interface IPageCard {
     pages: number;
     next: string | null;
   };
-  results: ICard[];
+  results: ICard[] | [];
 }
