@@ -19,15 +19,6 @@ export interface ICard {
   };
   image: string;
 }
-export interface IFormsState {
-  nameError: string;
-  genderError: string;
-}
-
-export type IErrorsUpdate = {
-  nameError: string;
-  genderError: string;
-};
 
 export interface Inputs {
   name: string;
@@ -54,16 +45,11 @@ export interface IUser {
   file: string;
   agree: boolean;
 }
-
-export interface IFormProps {
-  addUser: (e: IUser[]) => void;
-  users: IUser[];
-}
 export interface IPageCard {
   info: {
     count: number;
     pages: number;
     next: string | null;
   };
-  results: ICard[];
+  results: ICard[] | [];
 }

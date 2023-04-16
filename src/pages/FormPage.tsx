@@ -1,18 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import Form from "components/Form";
-import { IUser } from "types/types";
 import UserCard from "components/UserCard";
+import { useAppSelector } from "hooks/redux";
 
 function FormPage() {
-  const [users, setUsers] = useState<IUser[]>([]);
-  const addUser = (newUser: IUser[]) => {
-    setUsers(newUser);
-  };
+  const { users } = useAppSelector((state) => state.userReduser);
 
   return (
     <div>
       <div className="flex justify-center">
-        <Form users={users} addUser={addUser} />
+        <Form />
       </div>
       {users.length ? (
         <div className="flex flex-col gap-2">
